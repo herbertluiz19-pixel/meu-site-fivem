@@ -1,0 +1,290 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0d0e12; /* Preto acinzentado da foto */
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+/* Menu de Navegação */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8%;
+    background-color: #14161d; /* Cinza escuro */
+    border-bottom: 3px solid #1c52e8; /* Azul Royal da Logo */
+}
+
+.logo-container .site-logo {
+    height: 70px; /* Ajusta o tamanho da logo no menu */
+    width: auto;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #1c52e8; /* Azul ao passar o mouse */
+}
+
+/* Seção Principal (Hero) */
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(13, 14, 18, 0.85), rgba(13, 14, 18, 0.95)), url('logo.jpeg') no-repeat center center/cover;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: #1c52e8; /* Azul em destaque */
+}
+
+.hero p {
+    font-size: 18px;
+    color: #a0a5b5;
+    margin-bottom: 30px;
+}
+
+/* Botão Estilo Jogar */
+#btn-jogar {
+    background-color: #1c52e8;
+    color: #ffffff;
+    border: none;
+    padding: 15px 45px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(28, 82, 232, 0.5);
+}
+
+#btn-jogar:hover {
+    background-color: #133db3;
+    transform: scale(1.05);
+}
+
+.status {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #656975;
+}
+
+#contador {
+    color: #00ff66; /* Verde vivo para jogadores online */
+    font-weight: bold;
+}
+
+/* Seção VIP */
+.vip-section {
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #0d0e12;
+}
+
+.vip-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.vip-section .subtitle {
+    color: #656975;
+    margin-bottom: 40px;
+}
+
+.vip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Cartão VIP */
+.vip-card {
+    background-color: #14161d;
+    border: 1px solid #232733;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.vip-card.destacado {
+    border: 2px solid #1c52e8;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(28, 82, 232, 0.3);
+}
+
+.tag-popular {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1c52e8;
+    color: #ffffff;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.vip-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.preco {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1c52e8;
+    margin-bottom: 25px;
+}
+
+.preco span {
+    font-size: 16px;
+    color: #656975;
+}
+
+.vip-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.vip-card ul li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+/* Botão de Compra */
+.btn-comprar {
+    width: 100%;
+    background-color: transparent;
+    color: #1c52e8;
+    border: 2px solid #1c52e8;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #1c52e8;
+    color: #ffffff;
+}
+
+/* Alinhamento dos botões lado a lado */
+.botoes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaço entre os dois botões */
+    margin-bottom: 30px;
+}
+
+/* Estilo do Botão do Discord */
+#btn-discord {
+    background-color: #5865F2; /* Cor oficial do Discord */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 45px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(88, 101, 242, 0.4);
+    display: inline-block;
+}
+
+#btn-discord:hover {
+    background-color: #4752C4; /* Tom mais escuro ao passar o mouse */
+    transform: scale(1.05);
+}
+
+/* Seção de Regras */
+.regras-section {
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #14161d; /* Fundo cinza escuro para contrastar */
+    border-top: 2px solid #232733;
+}
+
+.regras-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.regras-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.regra-item {
+    background-color: #0d0e12;
+    border-left: 4px solid #1c52e8; /* Detalhe em Azul da Logo */
+    padding: 25px;
+    border-radius: 8px;
+    width: 320px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.regra-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(28, 82, 232, 0.1);
+}
+
+.regra-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.regra-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.regra-item p {
+    color: #a0a5b5;
+    font-size: 14px;
+    line-height: 1.6;
+}

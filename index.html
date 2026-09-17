@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraíso SP | Servidor de FiveM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <<div class="logo-container">
+    <img src="logo.jpeg" alt="Paraíso SP Logo" class="site-logo">
+</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#regras">Regras</a>
+        </nav>
+    </header>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Viva uma Nova Vida no <span>Melhor Servidor</span></h1>
+            <p>Economia balanceada, scripts exclusivos e a melhor comunidade de Roleplay de tema São Paulo.</p>
+            <div class="botoes-container">
+    <button id="btn-jogar" onclick="conectarServidor()">Jogar Agora</button>
+</div>
+
+            <a href="https://discord.gg/s5ck9Ktaz" target="_blank" id="btn-discord">
+    💬 Entrar no Discord
+</a>
+
+            <p class="status">Jogadores Online: <span id="contador">1</span></p>
+        </div>
+    </section>     <!-- Seção da Loja VIP -->
+    <section id="loja" class="vip-section">
+        <h2>Planos VIP - Paraíso SP</h2>
+        <p class="subtitle">Apoie o servidor e ganhe benefícios exclusivos na cidade!</p>
+        
+        <div class="vip-container">
+            <!-- VIP Bronze -->
+            <div class="vip-card">
+                <h3>VIP Bronze</h3>
+                <div class="preco">R$ 50<span>/mês</span></div>
+                <ul>
+                    <li>🚗 Carro importado básico por 30 dias</li>
+                    <li>💰 +$50.000 de dinheiro inicial</li>
+                    <li>Priority na fila: Nível 2</li>
+                </ul>
+                <button class="btn-comprar" onclick="comprarVip('Bronze')">Adquirir Agora</button>
+            </div>
+
+            <!-- VIP Ouro (Destaque) -->
+            <div class="vip-card destacado">
+                <div class="tag-popular">Mais Vendido</div>
+                <h3>VIP Ouro</h3>
+                <div class="preco">R$ 100<span>/mês</span></div>
+                <ul>
+                    <li>🏎️ 2 Super carros importados por 30 dias</li>
+                    <li>💰 +$20.000 de dinheiro inicial</li>
+                    <li>Priority na fila: Nível 1</li>
+                    <li>🏢 Mansão exclusiva na praia</li>
+                </ul>
+                <button class="btn-comprar" onclick="comprarVip('Ouro')">Adquirir Agora</button>
+            </div>
+
+             <!-- VIP Diamante (Destaque) -->
+            <div class="vip-card">
+                <h3>VIP Diamante</h3>
+                <div class="preco">R$ 150<span>/mês</span></div>
+                <ul>
+                    <li>🚁 Helicóptero 16 tiros exclusivo por 30 dias</li>
+                    <li>💰 +$150.000 de dinheiro inicial</li>
+                    <li>Priority na fila: Nível Máximo</li>
+                    <li>🏢 Mansão exclusiva na praia</li>
+                    <li>🎁 Pacote de itens raros no jogo</li>
+                </ul>
+                <button class="btn-comprar" onclick="comprarVip('Diamante')">Adquirir Agora</button>
+            </div>
+            
+        </div>
+    </section>
+
+     <!-- Seção de Regras da Cidade -->
+    <section id="regras" class="regras-section">
+        <h2>Diretrizes da Cidade - Paraíso SP</h2>
+        <p class="subtitle">Leia atentamente para garantir um Roleplay de qualidade.</p>
+        
+        <div class="regras-container">
+            <div class="regra-item">
+                <span class="regra-icon">❌</span>
+                <h3>Anti-RP & RDM</h3>
+                <p>É proibido matar outros jogadores sem motivo sólido dentro do RP. Valorize a vida!</p>
+            </div>
+            
+            <div class="regra-item">
+                <span class="regra-icon">🚘</span>
+                <h3>VDM (Vehicle Deathmatch)</h3>
+                <p>Utilizar veículos como arma para atropelar e matar outros cidadãos é proibido.</p>
+            </div>
+
+            <div class="regra-item">
+                <span class="regra-icon">🛡️</span>
+                <h3>SafeZones (Zonas Seguras)</h3>
+                <p>Hospitais são zonas de paz. Atos de violência geram advertência ou banimento.</p>
+            </div>
+        </div>
+    </section>
+
+ 
+    <script src="script.js"></script>
+</body>
+</html>
