@@ -7,37 +7,96 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <<div class="logo-container">
-    <img src="logo.jpeg" alt="Paraíso SP Logo" class="site-logo">
-</div>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#regras">Regras</a>
-        </nav>
-    </header>
+    <header>
+    <div class="logo-container">
+        <img src="logo.jpg.jpg" alt="Paraíso SP" class="logo-site">
+    </div>
+    
+    <!-- NOVO BOTÃO DE 3 PONTINHOS -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- LINKS DO MENU -->
+    <nav id="nav-menu">
+        <a href="#inicio">Início</a>
+        <a href="#vip">Loja VIP</a>
+        <a href="#regras">Regras</a>
+    </nav>
+</header>
+
+        <!-- Seção Principal -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Viva uma Nova Vida no <span>Melhor Servidor</span></h1>
+            <h1>Viva uma nova vida no <span>Melhor Servidor</span></h1>
             <p>Economia balanceada, scripts exclusivos e a melhor comunidade de Roleplay de tema São Paulo.</p>
+            
             <div class="botoes-container">
-    <button id="btn-jogar" onclick="conectarServidor()">Jogar Agora</button>
+                <button id="btn-jogar" onclick="conectarServidor()">Jogar Agora</button>
+                <a href="https://discord.gg/Ps7q5Wwv7" target="_blank" id="btn-discord">Entrar no Discord</a>
+            </div>
+            
+            <p class="status">Jogadores Online: <span id="contador">500</span></p>
+        </div>
+    </section>
+
+        <!-- PLAYER DE ÁUDIO PROFISSIONAL FIXADO À DIREITA -->
+<div class="audio-player-fixo">
+    <button id="btn-play-audio" onclick="toggleMusica()">
+        <span id="icone-audio">🎵</span> 
+        <span class="texto-audio">Tema da Cidade</span>
+    </button>
+    <!-- Alterado para musica.mp3.mp3 para bater com o nome real oculto na sua pasta -->
+    <audio id="musica-cidade" preload="auto">
+        <source src="musica.mp3.mp3" type="audio/mpeg">
+    </audio>
 </div>
 
-            <a href="https://discord.gg/s5ck9Ktaz" target="_blank" id="btn-discord">
-    💬 Entrar no Discord
-</a>
+<!-- Lógica em JavaScript Atualizada -->
+<script>
+    function toggleMusica() {
+        const musica = document.getElementById("musica-cidade");
+        const icone = document.getElementById("icone-audio");
 
-            <p class="status">Jogadores Online: <span id="contador">1</span></p>
-        </div>
-    </section>     <!-- Seção da Loja VIP -->
+        if (musica.paused) {
+            musica.play().then(() => {
+                icone.innerText = "⏸️"; // Muda para o ícone de pause quando começa a tocar
+            }).catch(error => {
+                console.log("O navegador barrou o autoplay. Clique novamente para reproduzir.", error);
+                alert("Clique novamente no botão para iniciar a música!");
+            });
+        } else {
+            musica.pause();
+            icone.innerText = "🎵"; // Volta para a nota musical ao pausar
+        }
+    }
+
+    // Código de segurança para alertar no console caso o arquivo mude de nome futuramente
+    document.getElementById("musica-cidade").onerror = function() {
+        console.error("Não foi possível encontrar o arquivo de áudio na pasta do site.");
+    };
+</script>
+    
+    <!-- Seção da Loja VIP -->
     <section id="loja" class="vip-section">
         <h2>Planos VIP - Paraíso SP</h2>
         <p class="subtitle">Apoie o servidor e ganhe benefícios exclusivos na cidade!</p>
         
         <div class="vip-container">
-            <!-- VIP Bronze -->
+            <div class="vip-card">
+                <h3>VIP Iniciante</h3>
+                <div class="preco">R$ 0,10<span>/mês</span></div>
+                <ul>
+                    <li>🚗 Carro importado básico por 30 dias</li>
+                    <li>💰 +$300.000 de dinheiro inicial</li>
+                    <li>Priority na fila: Nível 3</li>
+                </ul>
+                <button class="btn-comprar" onclick="comprarVip('Iniciante')">Adquirir Agora</button>
+            </div>
+
             <div class="vip-card">
                 <h3>VIP Bronze</h3>
                 <div class="preco">R$ 50<span>/mês</span></div>
@@ -49,26 +108,24 @@
                 <button class="btn-comprar" onclick="comprarVip('Bronze')">Adquirir Agora</button>
             </div>
 
-            <!-- VIP Ouro (Destaque) -->
             <div class="vip-card destacado">
                 <div class="tag-popular">Mais Vendido</div>
                 <h3>VIP Ouro</h3>
                 <div class="preco">R$ 100<span>/mês</span></div>
                 <ul>
                     <li>🏎️ 2 Super carros importados por 30 dias</li>
-                    <li>💰 +$20.000 de dinheiro inicial</li>
+                    <li>💰 +$100.000 de dinheiro inicial</li>
                     <li>Priority na fila: Nível 1</li>
                     <li>🏢 Mansão exclusiva na praia</li>
                 </ul>
-                <button class="btn-comprar" onclick="comprarVip('Ouro')">Adquirir Agora</button>
+                <a href="https://mpago.la" target="_blank" class="btn-comprar" style="text-decoration: none; display: block;">Adquirir Agora</a>
             </div>
 
-             <!-- VIP Diamante (Destaque) -->
             <div class="vip-card">
                 <h3>VIP Diamante</h3>
                 <div class="preco">R$ 150<span>/mês</span></div>
                 <ul>
-                    <li>🚁 Helicóptero 16 tiros exclusivo por 30 dias</li>
+                    <li>🚁 Helicóptero 15 tiros exclusivo por 30 dias</li>
                     <li>💰 +$150.000 de dinheiro inicial</li>
                     <li>Priority na fila: Nível Máximo</li>
                     <li>🏢 Mansão exclusiva na praia</li>
@@ -76,11 +133,10 @@
                 </ul>
                 <button class="btn-comprar" onclick="comprarVip('Diamante')">Adquirir Agora</button>
             </div>
-            
         </div>
     </section>
 
-     <!-- Seção de Regras da Cidade -->
+    <!-- Seção de Regras da Cidade -->
     <section id="regras" class="regras-section">
         <h2>Diretrizes da Cidade - Paraíso SP</h2>
         <p class="subtitle">Leia atentamente para garantir um Roleplay de qualidade.</p>
@@ -101,12 +157,80 @@
             <div class="regra-item">
                 <span class="regra-icon">🛡️</span>
                 <h3>SafeZones (Zonas Seguras)</h3>
-                <p>Hospitais são zonas de paz. Atos de violência geram advertência ou banimento.</p>
+                <p>Hospitais, Praça e Delegacias são zonas de paz. Atos de violência geram banimento.</p>
             </div>
+
+           <div class="regra-item">
+               <span class="regra-icon">❤️</span>
+               <h3>Anti-Amor à Vida</h3>
+               <p>Valorize a vida do seu personagem acima de tudo. É proibido agir com indiferença diante de ameaças reais ou cometer atos de suicídio simulado.</p>
+           </div>
+
+           <div class="regra-item">
+                 <span class="regra-icon">💰</span>
+                 <h3>Caixa 2 (Fraude)</h3>
+                 <p>É estritamente proibido desviar dinheiro de facções, corporações ou utilizar brechas (bugs) na economia para enriquecimento ilícito no servidor.</p>
+          </div>
+
         </div>
     </section>
 
- 
-    <script src="script.js"></script>
+    <head>
+    <!-- Polícia Federal -->
+    <section id="imagens" class="imagens-section">
+        <h2>Galeria de Imagens - Paraíso SP</h2>
+        <p class="subtitle">Confira momentos incríveis da cidade e da comunidade.</p>
+        
+    <!-- Imagens da PF-->     
+ <link rel="stylesheet" href="style.css">
+
+<div class="imagens-container">
+    <img src="pf-1.jpg.jpg" alt="Imagem 1" class="imagem-galeria">
+    <img src="pf-2.jpg.jpg" alt="Imagem 2" class="imagem-galeria">
+    <img src="pf-3.jpg.jpg" alt="Imagem 3" class="imagem-galeria">
+    <img src="pf-4.png.png" alt="Imagem 4" class="imagem-galeria">
+</div>
+    <script src="script.js"></script> 
+    <!-- Visualizador de Fotos (Modal) -->
+<div id="visualizador" class="modal-lb">
+    <span class="fechar-lb">&times;</span>
+    <img class="conteudo-modal" id="img-ampliada">
+</div>
+
+<!-- Link para o seu arquivo JavaScript se você tiver um, ou cole a tag script abaixo -->
+<script>
+    const modal = document.getElementById("visualizador");
+    const imgAmpliada = document.getElementById("img-ampliada");
+    const botaoFechar = document.querySelector(".fechar-lb");
+
+    // Seleciona todas as imagens da galeria e adiciona o evento de clique
+    document.querySelectorAll(".imagem-galeria").forEach(imagem => {
+        imagem.addEventListener("click", function() {
+            modal.style.display = "flex";
+            imgAmpliada.src = this.src; // Pega a imagem clicada e joga no modal
+            document.body.classList.add("lb-aberto"); // Trava o scroll da página
+        });
+    });
+
+    // Fecha o modal ao clicar no 'X'
+    botaoFechar.addEventListener("click", () => {
+        modal.style.display = "none";
+        document.body.classList.remove("lb-aberto"); // Destrava o scroll
+    });
+
+    // Fecha o modal se o usuário clicar no fundo escuro fora da imagem
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.classList.remove("lb-aberto");
+        }
+    });
+</script>
+
 </body>
 </html>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="btn-topo" onclick="voltarAoTopo()">
+        <span class="seta-topo">▲</span>
+    </button>
